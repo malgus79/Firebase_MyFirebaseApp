@@ -1,16 +1,17 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
 }
 
 android {
     namespace 'com.myfirebaseapp'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.myfirebaseapp"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -41,4 +42,11 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:30.5.0')
+    //Analytics
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    //Realtime Database
+    implementation 'com.google.firebase:firebase-database-ktx:20.1.0'
 }
